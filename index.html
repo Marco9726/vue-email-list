@@ -11,9 +11,13 @@
     <body>
         <div id="app">
             <div class="m-5">
+                <!-- creo il bottone per generare la lista al click e lo mostro solo se l'array delle mail è vuoto  -->
                 <button v-if="arrayMails.length == 0" @click="generateMails">Genera lista email</button>
-                <ul>
+                <!-- se la lunghezza dell'array è pari a 10, mostro la lista  -->
+                <ul v-if="arrayMails.length == 10">
+                    <!-- genero gli elementi della lista ciclando l'array delle mail  -->
                     <li v-for="(mail) in arrayMails">
+                        <!-- visualizzo a schermo la mail nell'elemento appena ciclato  -->
                         {{mail}}
                     </li>
                 </ul>
